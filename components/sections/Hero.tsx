@@ -95,8 +95,10 @@ export function Hero() {
       <div className="absolute inset-0 lg:left-auto lg:right-0 lg:w-[56%]">
         <SmartImage src="/images/hero/hero-main.jpg" alt="La salle du Passage Secret, Bordeaux" className="h-full w-full object-cover" />
         <div className="absolute inset-0 candlelight" />
-        <div className="absolute inset-0 bg-[#0D0C09]/72 lg:hidden" />
-        <div className="absolute inset-0 hidden lg:block lg:bg-gradient-to-r lg:from-[#0D0C09] lg:from-[3%] lg:via-[#0D0C09]/40 lg:to-transparent" />
+        {/* Voile sombre pour la lisibilité du texte (mobile/tablette : image plein cadre) */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0D0C09] via-[#0D0C09]/88 to-[#0D0C09]/45 lg:hidden" />
+        {/* Desktop : l'image est à droite, masque dégradé sur son bord gauche */}
+        <div className="absolute inset-0 hidden lg:block lg:bg-gradient-to-r lg:from-[#0D0C09] lg:from-[2%] lg:via-[#0D0C09]/55 lg:to-transparent" />
       </div>
 
       {/* Contenu */}
@@ -106,13 +108,13 @@ export function Hero() {
             <span className="font-nunito text-xs uppercase tracking-[0.2em] text-[#C4A017]">★ Guide Michelin 2025</span>
           </div>
 
-          <h1 className="mt-8 font-libre text-4xl font-bold italic leading-[1.1] text-[#F5F2EC] md:text-5xl">
+          <h1 className="mt-8 font-libre text-4xl font-bold italic leading-[1.1] text-[#F5F2EC] [text-shadow:0_2px_18px_rgba(0,0,0,0.55)] md:text-5xl">
             Table gastronomique
             <br />
             <em className="not-italic text-[#C4A017]">au cœur de Bordeaux.</em>
           </h1>
 
-          <p className="mt-6 max-w-lg font-nunito text-base font-light leading-relaxed text-[#F5F2EC]/60">
+          <p className="mt-6 max-w-lg font-nunito text-base font-light leading-relaxed text-[#F5F2EC]/85 [text-shadow:0_1px_12px_rgba(0,0,0,0.6)]">
             Niché dans le Passage Sarget, galerie couverte du XIXe siècle. À la nuit tombée, poussez la grille —
             découvrez les douces lumières. La cuisine française de Thomas Pasquereau vous attend.
           </p>
@@ -126,7 +128,7 @@ export function Hero() {
             </Button>
           </div>
 
-          <ul className="space-y-2 font-nunito text-sm text-[#F5F2EC]/50">
+          <ul className="space-y-2 font-nunito text-sm text-[#F5F2EC]/75 [text-shadow:0_1px_10px_rgba(0,0,0,0.6)]">
             {bullets.map((b) => (
               <li key={b} className="flex items-center gap-2">
                 <span className="text-[#C4A017]">◆</span> {b}
